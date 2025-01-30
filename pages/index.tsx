@@ -1,114 +1,274 @@
-import Image from "next/image";
-import { Geist, Geist_Mono } from "next/font/google";
+// import React from 'react'
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+// const Index = () => {
+//   return (
+//     <div>
+//        <nav className="navbar">
+//     <div className="logo">
+//       <a href="#">News Hub</a>
+//     </div>
+//     <div className="menu-toggle" id="mobile-menu">
+//       <span className="bar"></span>
+//       <span className="bar"></span>
+//       <span className="bar"></span>
+//     </div>
+//     <ul className="nav-links">
+//       <li><a href="./about">About</a></li>
+//       <li><a href="./pri">Privacy&policy</a></li>
+//       <li><a href="./Earn">Earning</a></li>
+     
+//     </ul>
+//   </nav>
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+//   <script src="script.js"></script>
 
-export default function Home() {
+ 
+ 
+
+  
+ 
+
+//   <script src="script.js"></script>
+
+
+//   <main className="main-container">
+//     <section className="headline-news">
+//       <h2>Headline News</h2>
+//       <div className="news-item">
+//         <div className="image-container">
+//           <img src="https://img.freepik.com/free-photo/sports-tools_53876-138077.jpg?ga=GA1.1.2040314287.1733501560&semt=ais_incoming_vrsd" alt="News Image"/>
+//         </div>
+//         <div className="text-content">
+//           <a className='one' href="./cat"><h3>Sports</h3></a>
+//           <a className='one' href="./add-cat">Upload form</a>
+//           <br />
+//         </div>
+//       </div>
+//       <br />
+//       <br />
+//       <div className="news-item">
+//         <div className="image-container">
+//           <img src="https://img.freepik.com/free-vector/raised-fist-revolution_23-2148000837.jpg?ga=GA1.1.2040314287.1733501560&semt=ais_incoming_vrsd" alt="News Image"/>
+//         </div>
+//         <div className="text-content">
+//          <a className='one' href="./county"> <h3>Country Information</h3></a>
+         
+//           <a className='one' href="add-county">Upload form</a>
+//         </div>
+//       </div>
+//     </section>
+
+    
+//     <section className="more-news">
+//       <h2>More News</h2>
+//       <div className="news-item">
+//         <div className="image-container">
+//           <img src="https://img.freepik.com/premium-photo/global-markets_999407-3314.jpg?ga=GA1.1.2040314287.1733501560&semt=ais_incoming_vrsd" alt="News Image"/>
+//         </div>
+//         <div className="text-content">
+//         <a className='one' href="./apple">  <h3>World News</h3></a>
+//           <a className='one' href="./add-apple">Upload form</a>
+//         </div>
+//       </div>
+//       <br />
+//       <br />
+//       <div className="news-item">
+//         <div className="image-container">
+//           <img src="https://img.freepik.com/premium-vector/comprehensive-collection-social-media-icons-vector-illustration_1300528-10988.jpg?ga=GA1.1.2040314287.1733501560&semt=ais_incoming_vrsd" alt="News Image"/>
+//         </div>
+//         <div className="text-content">
+//        <a className='one' href="./dog">  <h3>Social Media</h3></a>
+//           <a className='one' href="./add-dog">Upload form</a>
+//         </div>
+//       </div>
+      
+//     </section>
+//     <section className="more-news">
+//       <h2>More News</h2>
+//       <div className="news-item">
+//         <div className="image-container">
+//           <img src="https://img.freepik.com/free-vector/flat-design-bankruptcy-effect-person_23-2148492957.jpg?ga=GA1.1.2040314287.1733501560&semt=ais_incoming_vrsd" alt="News Image"/>
+//         </div> 
+//         <div className="text-content">
+//         <a className='one' href="./work"> <h3>Jobs</h3></a>
+//           <a className='one' href="./add-work">Upload form</a>
+//         </div>
+//       </div> 
+//       <br />
+//       <br />
+//       <div className="news-item">
+//         <div className="image-container">
+//           <img src="https://img.freepik.com/premium-photo/ai-engineer-robotics-it-department-flat-design_987764-250528.jpg?ga=GA1.1.2040314287.1733501560&semt=ais_incoming_vrsd" alt="News Image"/>
+//         </div>
+//         <div className="text-content">
+//         <a className='one' href="./fog">  <h3>Artifical intelligence</h3></a>
+//           <a  className='one' href="./add-fog">Upload form</a>
+//         </div>
+//       </div>
+      
+//     </section>
+   
+//   </main>
+  
+//   <footer>
+//     <p>&copy; 2025 NewsHub. All Rights Reserved.</p>
+//   </footer>
+//     </div>
+//   )
+// }
+
+// export default Index
+
+
+
+
+
+
+
+
+
+
+
+
+import React from 'react'
+import Image from 'next/image' // Import Image component from Next.js
+import Script from 'next/script' // Import Script component from Next.js
+
+const Index = () => {
   return (
-    <div
-      className={`${geistSans.variable} ${geistMono.variable} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
-    >
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              pages/index.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div>
+      <nav className="navbar">
+        <div className="logo">
+          <a href="#">News Hub</a>
         </div>
+        <div className="menu-toggle" id="mobile-menu">
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+        </div>
+        <ul className="nav-links">
+          <li><a href="./about">About</a></li>
+          <li><a href="./pri">Privacy&policy</a></li>
+          <li><a href="./Earn">Earning</a></li>
+        </ul>
+      </nav>
+
+      {/* Using next/script for async script loading */}
+      <Script src="/script.js" strategy="afterInteractive" />
+
+      <main className="main-container">
+        <section className="headline-news">
+          <h2>Headline News</h2>
+          <div className="news-item">
+            <div className="image-container">
+              <Image 
+                src="https://img.freepik.com/free-photo/sports-tools_53876-138077.jpg?ga=GA1.1.2040314287.1733501560&semt=ais_incoming_vrsd" 
+                alt="News Image" 
+                width={500} // Specify width
+                height={300} // Specify height
+              />
+            </div>
+            <div className="text-content">
+              <a className='one' href="./cat"><h3>Sports</h3></a>
+              <a className='one' href="./add-cat">Upload form</a>
+              <br />
+            </div>
+          </div>
+
+          <br />
+          <br />
+          <div className="news-item">
+            <div className="image-container">
+              <Image 
+                src="https://img.freepik.com/free-vector/raised-fist-revolution_23-2148000837.jpg?ga=GA1.1.2040314287.1733501560&semt=ais_incoming_vrsd" 
+                alt="News Image" 
+                width={500} 
+                height={300} 
+              />
+            </div>
+            <div className="text-content">
+              <a className='one' href="./county"> <h3>Country Information</h3></a>
+              <a className='one' href="add-county">Upload form</a>
+            </div>
+          </div>
+        </section>
+
+        <section className="more-news">
+          <h2>More News</h2>
+          <div className="news-item">
+            <div className="image-container">
+              <Image 
+                src="https://img.freepik.com/premium-photo/global-markets_999407-3314.jpg?ga=GA1.1.2040314287.1733501560&semt=ais_incoming_vrsd" 
+                alt="News Image" 
+                width={500} 
+                height={300} 
+              />
+            </div>
+            <div className="text-content">
+              <a className='one' href="./apple">  <h3>World News</h3></a>
+              <a className='one' href="./add-apple">Upload form</a>
+            </div>
+          </div>
+
+          <br />
+          <br />
+          <div className="news-item">
+            <div className="image-container">
+              <Image 
+                src="https://img.freepik.com/premium-vector/comprehensive-collection-social-media-icons-vector-illustration_1300528-10988.jpg?ga=GA1.1.2040314287.1733501560&semt=ais_incoming_vrsd" 
+                alt="News Image" 
+                width={500} 
+                height={300} 
+              />
+            </div>
+            <div className="text-content">
+              <a className='one' href="./dog">  <h3>Social Media</h3></a>
+              <a className='one' href="./add-dog">Upload form</a>
+            </div>
+          </div>
+        </section>
+
+        <section className="more-news">
+          <h2>More News</h2>
+          <div className="news-item">
+            <div className="image-container">
+              <Image 
+                src="https://img.freepik.com/free-vector/flat-design-bankruptcy-effect-person_23-2148492957.jpg?ga=GA1.1.2040314287.1733501560&semt=ais_incoming_vrsd" 
+                alt="News Image" 
+                width={500} 
+                height={300} 
+              />
+            </div> 
+            <div className="text-content">
+              <a className='one' href="./work"> <h3>Jobs</h3></a>
+              <a className='one' href="./add-work">Upload form</a>
+            </div>
+          </div> 
+
+          <br />
+          <br />
+          <div className="news-item">
+            <div className="image-container">
+              <Image 
+                src="https://img.freepik.com/premium-photo/ai-engineer-robotics-it-department-flat-design_987764-250528.jpg?ga=GA1.1.2040314287.1733501560&semt=ais_incoming_vrsd" 
+                alt="News Image" 
+                width={500} 
+                height={300} 
+              />
+            </div>
+            <div className="text-content">
+              <a className='one' href="./fog">  <h3>Artifical intelligence</h3></a>
+              <a  className='one' href="./add-fog">Upload form</a>
+            </div>
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      <footer>
+        <p>&copy; 2025 NewsHub. All Rights Reserved.</p>
       </footer>
     </div>
-  );
+  )
 }
+
+export default Index
