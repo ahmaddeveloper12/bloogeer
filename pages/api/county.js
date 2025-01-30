@@ -1,3 +1,8 @@
+
+
+
+
+
 // import dbConnect from "../../lib/mongodb";
 // import County from "../../models/county";
 
@@ -6,7 +11,23 @@
 
 //   if (req.method === "GET") {
 //     try {
-//       const counties = await County.find({});
+//       const { title, description, netWorth } = req.query; // Search parameters from the query
+
+//       // Build the search query based on provided parameters
+//       const searchQuery = {};
+//       if (title) {
+//         searchQuery.title = { $regex: title, $options: 'i' }; // Case-insensitive search for title
+//       }
+//       if (description) {
+//         searchQuery.description = { $regex: description, $options: 'i' }; // Case-insensitive search for description
+//       }
+//       if (netWorth) {
+//         searchQuery.netWorth = { $regex: netWorth, $options: 'i' }; // Case-insensitive search for netWorth
+//       }
+
+//       // Find counties based on search query or return all counties if no query is provided
+//       const counties = await County.find(searchQuery);
+
 //       return res.status(200).json(counties);
 //     } catch (error) {
 //       return res.status(500).json({ message: error.message });
@@ -24,6 +45,7 @@
 //         netWorth,
 //         jobs,
 //       });
+
 //       await newCounty.save();
 //       return res.status(201).json(newCounty);
 //     } catch (error) {
@@ -31,6 +53,7 @@
 //     }
 //   }
 // }
+
 
 
 
@@ -46,21 +69,19 @@ export default async function handler(req, res) {
 
   if (req.method === "GET") {
     try {
-      const { title, description, netWorth } = req.query; // Search parameters from the query
+      const { title, description, netWorth } = req.query;
 
-      // Build the search query based on provided parameters
       const searchQuery = {};
       if (title) {
-        searchQuery.title = { $regex: title, $options: 'i' }; // Case-insensitive search for title
+        searchQuery.title = { $regex: title, $options: 'i' };
       }
       if (description) {
-        searchQuery.description = { $regex: description, $options: 'i' }; // Case-insensitive search for description
+        searchQuery.description = { $regex: description, $options: 'i' };
       }
       if (netWorth) {
-        searchQuery.netWorth = { $regex: netWorth, $options: 'i' }; // Case-insensitive search for netWorth
+        searchQuery.netWorth = { $regex: netWorth, $options: 'i' };
       }
 
-      // Find counties based on search query or return all counties if no query is provided
       const counties = await County.find(searchQuery);
 
       return res.status(200).json(counties);
@@ -73,6 +94,11 @@ export default async function handler(req, res) {
     try {
       const { title, image, description, netWorth, jobs } = req.body;
 
+      // Check if required fields are provided
+      if (!title || !image || !description || !netWorth || !jobs) {
+        return res.status(400).json({ message: "Missing required fields" });
+      }
+
       const newCounty = new County({
         title,
         image,
@@ -84,7 +110,9 @@ export default async function handler(req, res) {
       await newCounty.save();
       return res.status(201).json(newCounty);
     } catch (error) {
+      console.error("Error adding county:", error); // Log the error to help debug
       return res.status(500).json({ message: error.message });
     }
   }
 }
+
